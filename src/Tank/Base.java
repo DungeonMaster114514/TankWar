@@ -5,9 +5,21 @@ public class Base {
     private int tankX;
     private int tankY;
     private int direction;
+    private int speed = 5;
 
-    int speed = 5;
-    public Base(int x,int y){
+    public void setSpeed(int speed) {
+        this.speed = speed;
+    }
+
+    public void setTankX(int tankX) {
+        this.tankX = tankX;
+    }
+
+    public void setTankY(int tankY) {
+        this.tankY = tankY;
+    }
+
+    public Base(int x, int y){
         tankX = x;
         tankY = y;
     }
@@ -24,20 +36,28 @@ public class Base {
     }
 
     //坦克移动方法
-    public void moveUpTankX(){
-        tankX+=speed;
+    public void moveRightTankX(){
+        if (tankX < 1640){
+            tankX += speed;
+        }
     }
 
-    public void moveTankX(){
-        tankX-=speed;
+    public void moveLeftTankX(){
+        if(tankX > 0){
+            tankX -= speed;
+        }
     }
 
     public void moveUpTankY(){
-        tankY-=speed;
+        if (tankY > 0){
+            tankY -= speed;
+        }
     }
 
     public void moveTankY(){
-        tankY+=speed;
+        if (tankY < 900){
+            tankY += speed;
+        }
     }
 
     public int getDirection() {

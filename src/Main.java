@@ -1,4 +1,4 @@
-import Panel.PanelTank;
+import MyPanel.PanelTank;
 import javax.swing.*;
 
 public class Main extends JFrame {//Listener为监听器,用于监听键盘事件

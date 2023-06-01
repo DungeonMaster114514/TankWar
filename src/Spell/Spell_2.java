@@ -1,21 +1,20 @@
 package Spell;
 
-import Tank.Hero;
-
-public class Spell_1 implements Runnable {
-    public Spell_1(int spellSpeed, int X, int Y, int Direction,Hero hero){
+import Tank.Enemy;
+public class Spell_2 implements Runnable {
+    public Spell_2(int spellSpeed, int X, int Y, int Direction,Enemy enemy){
         this.SpellSpeed = spellSpeed;
         this.Direction = Direction;
         this.X = X;
         this.Y = Y;
-        this.hero = hero;
+        this.enemy = enemy;
     }
     public int SpellSpeed;
     public int Direction;
-    Hero hero;//用于移除多余的子弹对象
+    Enemy enemy;//用于移除多余的子弹对象
     private int X;
     private int Y;
-    public Boolean isLive = true;
+    public boolean isLive = true;
 
     public int getDirection() {
         return Direction;
@@ -54,7 +53,8 @@ public class Spell_1 implements Runnable {
                 throw new RuntimeException(e);
             }
         }
-        hero.spells.remove(this);
-        System.out.println(Thread.currentThread().getName()+"子弹以销毁");
+        enemy.enemySpells.remove(this);
+        System.out.println(Thread.currentThread().getName()+"敌人子弹以销毁");
     }
 }
+
